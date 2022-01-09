@@ -33,13 +33,12 @@ def main():
             return "lose"
 
     while True:
-        while True:
-            user_input = input("Enter your input:\n")
-            if user_input in allowed:
-                break
-            else:
-                print(
-                    f"Invalid Input!\nYour input must be one of these: {', '.join(allowed)}")
+        user_input = input("Enter your input:\n")   #Gets Input from the user
+        if user_input not in allowed:
+            print(
+                f"Invalid Input!\nYour input must be one of these: {', '.join(allowed)}")
+            continue
+
         computer_value = random.choice((rock, paper, scissors))
         print(
             f"The computer generated value was '{computer_value.__name__.capitalize()}'.")
